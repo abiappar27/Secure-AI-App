@@ -1,0 +1,36 @@
+{
+  "name": "ExternalTrainingConfig",
+  "type": "object",
+  "properties": {
+    "platform_name": {
+      "type": "string",
+      "description": "Name of the external training platform"
+    },
+    "platform_url": {
+      "type": "string",
+      "description": "Base URL of the training platform"
+    },
+    "platform_type": {
+      "type": "string",
+      "enum": [
+        "huggingface",
+        "colab",
+        "sagemaker",
+        "custom"
+      ],
+      "description": "Type of training platform"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true
+    },
+    "api_key_hint": {
+      "type": "string",
+      "description": "Hint about stored API key (not the actual key)"
+    }
+  },
+  "required": [
+    "platform_name",
+    "platform_url"
+  ]
+}
