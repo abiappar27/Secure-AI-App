@@ -1,0 +1,64 @@
+{
+  "name": "Dataset",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Dataset name"
+    },
+    "description": {
+      "type": "string",
+      "description": "Dataset description"
+    },
+    "file_url": {
+      "type": "string",
+      "description": "URL of the uploaded CSV file"
+    },
+    "total_rows": {
+      "type": "number",
+      "description": "Total number of rows in dataset"
+    },
+    "valid_rows": {
+      "type": "number",
+      "description": "Number of valid rows"
+    },
+    "quality_percentage": {
+      "type": "number",
+      "description": "Dataset quality score (0-100)"
+    },
+    "columns": {
+      "type": "array",
+      "description": "Column names in the dataset",
+      "items": {
+        "type": "string"
+      }
+    },
+    "dataset_hash": {
+      "type": "string",
+      "description": "SHA-256 hash of the dataset file"
+    },
+    "blockchain_tx_hash": {
+      "type": "string",
+      "description": "Blockchain transaction hash"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "verified",
+        "rejected",
+        "compromised"
+      ],
+      "default": "pending",
+      "description": "Current dataset status"
+    },
+    "file_size_bytes": {
+      "type": "number",
+      "description": "File size in bytes"
+    }
+  },
+  "required": [
+    "name",
+    "status"
+  ]
+}
