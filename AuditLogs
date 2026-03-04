@@ -1,0 +1,45 @@
+{
+  "name": "AuditLog",
+  "type": "object",
+  "properties": {
+    "event_type": {
+      "type": "string",
+      "enum": [
+        "dataset_uploaded",
+        "dataset_rejected",
+        "dataset_verified",
+        "tamper_detected",
+        "training_started",
+        "training_completed",
+        "training_failed",
+        "external_link_generated",
+        "config_updated"
+      ],
+      "description": "Type of audit event"
+    },
+    "dataset_id": {
+      "type": "string",
+      "description": "Related dataset ID"
+    },
+    "dataset_name": {
+      "type": "string",
+      "description": "Related dataset name"
+    },
+    "details": {
+      "type": "string",
+      "description": "Event details"
+    },
+    "severity": {
+      "type": "string",
+      "enum": [
+        "info",
+        "warning",
+        "critical"
+      ],
+      "default": "info"
+    }
+  },
+  "required": [
+    "event_type"
+  ]
+}
