@@ -1,0 +1,61 @@
+{
+  "name": "TrainingJob",
+  "type": "object",
+  "properties": {
+    "dataset_id": {
+      "type": "string",
+      "description": "Dataset used for training"
+    },
+    "dataset_name": {
+      "type": "string",
+      "description": "Dataset name"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "queued",
+        "running",
+        "completed",
+        "failed",
+        "blocked"
+      ],
+      "default": "queued"
+    },
+    "model_type": {
+      "type": "string",
+      "enum": [
+        "classification",
+        "regression",
+        "clustering",
+        "nlp"
+      ],
+      "description": "Type of ML model"
+    },
+    "accuracy": {
+      "type": "number",
+      "description": "Model accuracy metric"
+    },
+    "precision": {
+      "type": "number",
+      "description": "Model precision metric"
+    },
+    "recall": {
+      "type": "number",
+      "description": "Model recall metric"
+    },
+    "training_duration_seconds": {
+      "type": "number"
+    },
+    "error_message": {
+      "type": "string"
+    },
+    "integrity_verified": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "required": [
+    "dataset_id",
+    "status"
+  ]
+}
